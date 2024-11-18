@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import { useState } from "react";
 import logo from "./logo.svg";
 import electronicCard from "./electronicCard.jpg";
 import "./App.css";
