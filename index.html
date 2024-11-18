@@ -1,44 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html><html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="isacofarsaei"/><link rel="manifest" href="/manifest.json"/><title>Hossein Farsaei</title><style>.loader-container{width:200px;text-align:center;margin:40vh auto}.loader{height:7px;background-color:#000;position:relative}.loader::after{position:absolute;top:-3px;left:-3px;content:"";width:200px;height:6px;border:3px solid}</style><script defer="defer" src="/static/js/main.b4e94f6c.js"></script><link href="/static/css/main.c2ff540e.css" rel="stylesheet">
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <h1>AAAA</h1>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
-</html>
+    <div id="root">
+      <div class="loader-container">
+        <h1>LOADING...</h1>
+        <div id="loader" class="loader"></div>
+        <p id="loader_value">0%</p>
+        <div id="loading_message"></div>
+      </div>
+    </div>
+    
+    <script>
+      function loading(e){
+        e<=98?
+          (document.getElementById("loader_value")&&(document.getElementById("loader_value").innerText=e+"%"),document.getElementById("loader")&&(document.getElementById("loader").style.width=e+"%"))
+          :
+          setTimeout((()=>{
+            document.getElementById("loading_message")&&(document.getElementById("loading_message").innerHTML+="<h4>We've detected a slow connection. This may take a while.</h4>")}),1500)
+      }
+      
+      for(let e=1;e<=99;e++)setTimeout((()=>{loading(e)}),15*e)
+    
+    </script></body></html>
