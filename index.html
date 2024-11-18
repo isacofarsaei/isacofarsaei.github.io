@@ -1,27 +1,131 @@
-<!doctype html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="isacofarsaei"/><link rel="manifest" href="/manifest.json"/><title>Hossein Farsaei</title><style>.loader-container{width:200px;text-align:center;margin:40vh auto}.loader{height:7px;background-color:#000;position:relative}.loader::after{position:absolute;top:-3px;left:-3px;content:"";width:200px;height:6px;border:3px solid}</style><script defer="defer" src="/static/js/main.b4e94f6c.js"></script><link href="/static/css/main.c2ff540e.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+	  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="styles.css">
+    <title>ISACO Farsaei</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root">
-      <div class="loader-container">
-        <h1>LOADING...</h1>
-        <div id="loader" class="loader"></div>
-        <p id="loader_value">0%</p>
-        <div id="loading_message"></div>
+  <div class="App">
+	<div onclick="clearContacBox()">
+		<div class="banner">
+          <div class="banner-right">
+            <div class="banner-text">اصغر فرسایی</div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <div class="banner-center">
+            <img src="IKCo.png" alt="logo" class="banner-logo"></img>
+            <h1>
+              <span class="font-face-header1">ایسا</span>
+              <span class="font-face-header5">کو </span>
+              <span class="font-face-header3"> فر</span>
+              <span class="font-face-header5">سا</span>
+              <span class="font-face-header4">یی</span>
+            </h1>
+          </div>
+          <div class="banner-left">
+            <div class="banner-text">کد: 4102122</div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+        <div class="about">
+          فروشگاه فرسایی با بیش از بیست سال سابقه (از سال 1381) در توزیع و فروش
+          قطعات یدکی و آپشن های جانبی خودرو با نمایندگی رسمی شرکت هایی چون
+          پلاتین ایران، سامفر، ویرا ولتاژ، و سمین خودرو پویا (SKP)، پس از چندین
+          سال ارائه خدمات حضوری در بازار لوازم یدکی خودرو و اخذ عاملیت فروشگاهی
+          مجاز ایساکو با کد 4102122، امکان خرید آنلاین لوازم یدکی خودرو را در
+          راستاي چشم انداز دسترسی آسان و اطمینان از اصالت کالا با بهترین قیمت را
+          برای کاربران خود فراهم ساخته است. همچنین شما میتوانید با همکاران ما در
+          شبکه های اجتماعی در ارتباط باشید و از مشاوره های تخصصی آنها پیش از
+          خرید استفاده کنید تا خرید مطمئن تر و رضایت بخش تری را تجربه نمایید.
+        </div>
+
+        <div class="logo-container">
+          <img src="./Peugeot.png" alt="logo" class="logo" />
+          <img src="./Renault.png" alt="logo" class="logo" />
+          <img src="./IKCo.png" alt="logo" class="logo" />
+        </div>
       </div>
-    </div>
-    
-    <script>
-      function loading(e){
-        e<=98?
-          (document.getElementById("loader_value")&&(document.getElementById("loader_value").innerText=e+"%"),document.getElementById("loader")&&(document.getElementById("loader").style.width=e+"%"))
-          :
-          setTimeout((()=>{
-            document.getElementById("loading_message")&&(document.getElementById("loading_message").innerHTML+="<h4>We've detected a slow connection. This may take a while.</h4>")}),1500)
-      }
-      
-      for(let e=1;e<=99;e++)setTimeout((()=>{loading(e)}),15*e)
-    
-    </script></body></html>
+	  
+	  <div class="body">
+        <div class="body-header" onclick="setContactText('')">
+          <div class="font-face-header4">قطعات اصلی، امنیت بیشتر</div>
+          <div style="text-align: left" class="font-face-header4">
+            فروشگاه مجاز ایساکو در خدمت شما
+          </div>
+        </div>
+		
+		<div class="category-container" onclick="setContactText('')">
+          <div class="engine card-container">
+            <div class="img-card">
+              <img src="/engine.png" />
+            </div>
+            <p>موتوری</p>
+          </div>
+          <div class="engine card-container">
+            <div class="img-card">
+              <img src="/electricCard.png" />
+            </div>
+            <p>برقی</p>
+          </div>
+          <div class="body-card card-container">
+            <div class="img-body-card">
+              <img src="/light.png" />
+            </div>
+            <p style="font-size: xx-large">بدنه</p>
+            <div class="img-body-card">
+              <img src="/doors.png" />
+            </div>
+          </div>
+          <div class="fs card-container">
+            <div class="img-card">
+              <img src="/fs.png" />
+            </div>
+            <p>جلوبندی</p>
+          </div>
+          <div class="tuning card-container">
+            <div class="img-card">
+              <img src="/tuning.png" />
+            </div>
+            <p>آپشن و تزئینات</p>
+          </div>
+        </div>
+		
+		
+		<div class="contact-container">
+          <div class="contact-text" style='border: 2px solid black; border-radius: 7pt; height: 70px;'>
+            {contactText}
+          </div>
+          <div class="contact-list">
+            <div onhover='setContactText("021-33971622" + " , " + "021-33952557")' onclick='openLink("tel:+982133971622")'> tel </div>
+            <div onhover='setContactText("http://www.isacofarsaei.ir")' onclick='openLink("http://www.isacofarsaei.ir")'> Website </div>
+            <div onhover='setContactText("989191242492+")'> WhatsUp </div>
+            <div onhover='setContactText("isaco_farsari@")'> Instagram </div>
+            <div onhover='setContactText("تهران، خیابان امیرکبیر، نبش کوچه سراج الملک، پلاک 425")'> Location </div>
+          </div>
+        </div>
+		
+		
+	  </div>
+	  
+	</div>
+	
+	
+	<script>
+		function clearContacBox() {
+		
+		}
+		function clearContacBox(text) {
+		
+		}
+		function openLink(text) {
+		
+		}
+	</script>
+  </body>
+</html>
