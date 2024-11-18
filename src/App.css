@@ -1,0 +1,283 @@
+.App {
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: row;
+  direction: rtl;
+  padding: 1vmin;
+  box-sizing: border-box;
+  background-color: #ededed;
+}
+
+.header {
+  justify-content: flex-start;
+}
+
+.header,
+.body {
+  width: 50%;
+  display: flex;
+  border: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner {
+  background-color: #0000ff;
+  width: calc(100% + 2px);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.banner-right,
+.banner-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+  gap: 10px;
+  color: #c9d1d6;
+}
+.banner-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #c9d1d6;
+}
+.banner-center h1 {
+  margin: 0;
+  font-size: xxx-large;
+  font-weight: 800;
+}
+
+.line {
+  width: 100%;
+  height: min(15px, 2vmin);
+  background-color: #c9d1d6;
+  box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+.banner-text {
+  padding: 0 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  white-space: nowrap;
+  font-family: body1;
+}
+.banner-logo {
+  max-height: 10vh;
+  margin: 15px 0 -15px;
+}
+
+.logo {
+  height: 15vh;
+  max-width: 16vw;
+  aspect-ratio: 1;
+}
+
+.body {
+  justify-content: space-evenly;
+}
+
+.body-header {
+  width: 100%;
+  padding: 4vmin 2vw 2vmin;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-size: xx-large;
+  gap: 15px;
+}
+
+.category-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  gap: 1vmin 2%;
+  padding: 0 2vmin 30px 1vmin;
+  box-sizing: border-box;
+}
+.category-container div p {
+  font-family: "body3";
+  top: 50%;
+  font-size: 3vmin;
+}
+
+.card-container {
+  border-radius: 7pt;
+  background-color: #0000ff;
+  padding: 0 2vmin;
+  box-sizing: border-box;
+  height: 15vh;
+  background-size: contain;
+  color: #c9d1d6;
+  display: flex;
+  align-items: center;
+}
+.card-container p {
+  width: 50%;
+  text-align: center;
+}
+
+.img-card {
+  height: 102%;
+}
+.img-card img {
+  max-height: 100%;
+  max-width: 100%;
+  aspect-ratio: 1;
+  filter: drop-shadow(2px 1px 1px #bebec0);
+}
+
+.img-body-card, .img-card {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-body-card img {
+  max-height: 100%;
+  max-width: 100%;
+  aspect-ratio: 1;
+  filter: drop-shadow(2px 1px 1px #bebec0);
+}
+
+.engine {
+  width: 49%;
+}
+.electic {
+  width: 49%;
+}
+.body-card {
+  width: 100%;
+}
+.fs {
+  width: 49%;
+}
+.tuning {
+  width: 49%;
+}
+
+img {
+  height: 100%;
+}
+
+
+.contact-container {
+  box-sizing: border-box;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  font-family: "body3";
+  font-size: 14pt;
+  align-items: center
+}
+
+.contact-text {
+  flex: 1;
+  display: flex;
+  box-sizing: border-box;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  text-align: justify;
+  transition-property: all;
+  transition-duration: 500ms;
+  min-height: 70px;
+}
+
+.contact-list{
+  display: flex;
+  width: 90%;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 30pt;
+  margin-bottom: 20px;
+}
+.contact-list * {
+  filter: drop-shadow(2px 1px 1px #bebec0);
+  cursor: pointer;
+}
+
+.about {
+  text-align: justify;
+  box-sizing: border-box;
+  padding: 0 2vmin;
+  font-family: "body3";
+  font-size: 12pt;
+}
+
+.logo-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 1000px) {
+  .App {
+    flex-direction: column;
+  }
+
+  .header,
+  .body, .category-container {
+    width: 100%;
+  }
+
+  .banner-center h1 {
+    font-size: xx-large;
+    font-weight: 800;
+  }
+
+  .logo-container {
+    display: none;
+  }
+
+  .contact-container {
+    width: 100%;
+    font-size: 16pt;
+  }
+
+  .card-container {
+    height: 30vmin;
+  }
+  .category-container div p {
+    font-size: 5vmin;
+  }
+
+  .contact-list {
+    margin-bottom: 50px;
+  }
+  
+  .contact-text {
+    min-height: 10px;
+  }
+}
+
+.font-face-header1 {
+  font-family: "header1";
+}
+
+.font-face-header2 {
+  font-family: "header2";
+  font-size: xx-large;
+}
+
+.font-face-header3 {
+  font-family: "header3";
+}
+
+.font-face-header4 {
+  font-family: "header4";
+}
+
+.font-face-header5 {
+  font-family: "header5";
+}
