@@ -19,6 +19,7 @@ function App() {
 
   return (
     <div>
+      <H1>HELP</H1>
       <Routes>
           <Route
             path={"/"}
