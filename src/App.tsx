@@ -17,6 +17,11 @@ function App() {
   const [contactText, setContactText] = useState<string>("");
 
   return (
+    <div>
+      <Routes>
+          <Route
+            path={"/"}
+            element={
     <div className="App">
       <div
         className="header"
@@ -167,6 +172,10 @@ function App() {
           </div>
         </div>
       </div>
+    </div>
+              }
+          >
+        </Routes>
     </div>
   );
 }
