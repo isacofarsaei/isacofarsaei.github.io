@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!--Bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Isaco Farsaei</title>
+
+    <style>
+      @font-face {
+        font-family: persianFontBold;
+        src: url("IRANSans3.ttf");
+        font-weight: bold;
+      }
+      @font-face {
+        font-family: persianFont;
+        src: url("IRANSans1.ttf");
+      }
+
+      .page-cotainer {
+        width: 100vw;
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #ededed;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .page-header {
+        height: 27%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      .right-header,
+      .left-header {
+        width: 49vw;
+        background-color: rgb(17, 0, 255);
+        height: 100%;
+        display: flex;
+      }
+      .left-banner,
+      .right-banner {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 20px;
+        gap: 10px;
+        color: #c9d1d6;
+        width: 33%;
+      }
+      .line {
+        width: 100%;
+        height: min(15px, 2vmin);
+        background-color: #c9d1d6;
+        box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.4);
+      }
+      .center-banner {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      .center-banner h1 {
+        padding: 0 0 20px;
+        margin: 0;
+        color: #c9d1d6;
+        font-family: persianFontBold;
+        white-space: nowrap;
+      }
+      .left-logo {
+        width: 80%;
+      }
+      .right-logo {
+        height: 60%;
+        box-sizing: border-box;
+        padding-bottom: 20px;
+      }
+      .banner-texts {
+        padding: 0 1vw;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        white-space: nowrap;
+        font-family: persianFontBold;
+      }
+
+      .page-body {
+        height: 100%;
+        width: 100vw;
+        display: flex;
+        flex-direction: row-reverse;
+        box-sizing: border-box;
+        padding: 0 0 10px;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        overflow-y: auto;
+      }
+      .body-left,
+      .body-right {
+        width: 49%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        height: 100%;      
+        justify-content: space-evenly;
+        overflow-y: auto;
+      }
+      .body-left {
+        padding: 15px 2vmin 5px;
+      }
+      .body-right {
+        direction: rtl;
+        padding: 0 2vmin 5px;
+      }
+      .about-us {
+        text-align: justify;
+        box-sizing: border-box;
+        font-family: "persianFont";
+        font-size: 11pt;
+      }
+
+      .category-box-container {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1vh 1%;
+        align-self: center;
+        width: 80%;
+      }
+      .tile,
+      .double-tile,
+      .fourply-tile {
+        border-radius: 12pt;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 8vh;
+        background-color: rgb(17, 0, 255);
+        color: #ededed;
+        text-align: center;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .tile:hover,
+      .double-tile:hover,
+      .fourply-tile:hover {
+        background-color: rgb(17, 2, 219);
+        color: #fff;
+        scale: 1.01;
+      }
+      .tile {
+        flex: 1;
+        min-width: 18%;
+      }
+      .double-tile {
+        flex: 2;
+        min-width: 38%;
+      }
+      .fourply-tile {
+        flex: 4;
+        min-width: 76%;
+      }
+
+      .mobile-category-box-container {
+        display: none;
+      }
+
+      .logos-container {
+        height: 20%;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .calling-us {
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        direction: rtl;
+        position: relative;
+      }
+      .calling-us p {
+        margin-right: 2vw;
+        font-family: persianFont;
+        direction: ltr;
+        font-size: 2.2vmin;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      .calling-us p span {
+        margin-right: 3vw;
+      }
+      .calling-us img {
+        width: 12vmax;
+        height: 12vmax;
+        position: absolute;
+        top: 35%;
+        left: 5vw;
+      }
+
+      @media only screen and (max-width: 1250px) {
+        .calling-us img {
+          top: 35%;
+        }
+      }
+
+      @media only screen and (max-width: 1000px) {
+        .page-header {
+          height: 20%;
+        }
+        .left-header {
+          display: none;
+        }
+        .right-header {
+          width: 100vw;
+        }
+        .right-logo {
+          height: 45%;
+        }
+        .page-body {
+          flex-direction: column;
+        }
+        .body-left,
+        .body-right {
+          width: 100%;
+        }
+
+        .category-box-container {
+          display: none;
+        }
+        .mobile-category-box-container {
+          margin-top: 15px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1vh 1%;
+          align-self: center;
+          width: 100%;
+        }
+        .calling-us p  {
+          font-size: 2vmax;
+        }
+        .calling-us img {
+          width: 17vmax;
+          height: 17vmax;
+          top: 35%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div class="page-cotainer">
+      <div class="page-header">
+        <div class="left-header">
+          <div class="left-banner">
+            <div class="banner-texts">کد: 4102122</div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <div class="center-banner">
+            <img class="left-logo" src="./isacoText.png" />
+          </div>
+          <div class="right-banner">
+            <div class="banner-texts">اصغر فرسایی</div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+        <div class="right-header">
+          <div class="left-banner">
+            <div class="banner-texts">کد: 4102122</div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <div class="center-banner">
+            <img class="right-logo" src="./IKCo.png" />
+            <h1>ایساکو فرسایی</h1>
+          </div>
+          <div class="right-banner">
+            <div class="banner-texts">اصغر فرسایی</div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-body">
+        <div class="body-right">
+          <h3>درباره ما:</h3>
+          <div class="about-us">
+            فروشگاه فرسایی با بیش از بیست سال سابقه (از سال 1381) در توزیع و
+            فروش قطعات یدکی و آپشن های جانبی خودرو با نمایندگی رسمی شرکت هایی
+            چون پلاتین ایران، سامفر، ویرا ولتاژ، و سمین خودرو پویا (SKP)، هم
+            اکنون با اخذ عاملیت فروشگاهی مجاز ایساکو با کد 4102122 در خدمت شماست
+            تا امکان خرید آنلاین لوازم یدکی خودرو را در راستاي چشم انداز دسترسی
+            آسان و اطمینان از اصالت کالا با بهترین قیمت را برای کاربران خود
+            فراهم سازد. شما میتوانید با همکاران ما در شبکه های اجتماعی در ارتباط
+            باشید و از مشاوره های تخصصی آنها پیش از خرید استفاده کنید تا خرید
+            مطمئن تر و رضایت بخش تری را تجربه نمایید.
+          </div>
+          <div class="category-box-container">
+            <div class="double-tile">موتوری</div>
+            <div class="tile">ترمز</div>
+            <div class="double-tile">جلوبندی</div>
+            <div class="tile">ایمنی</div>
+            <div class="double-tile">برقی</div>
+            <div class="double-tile">مصرفی</div>
+            <div class="tile">تهویه</div>
+            <div class="fourply-tile">بدنه</div>
+            <div class="tile">داخلی</div>
+            <div class="double-tile">آپشن و تزئینی</div>
+            <div class="tile">انتقال سوخت</div>
+            <div class="tile">جعبه فرمان</div>
+          </div>
+
+          <div class="mobile-category-box-container">
+            <div class="double-tile">موتوری</div>
+            <div class="tile">ترمز</div>
+            <div class="tile">داخلی</div>
+            <div class="double-tile">جلوبندی</div>
+            <div class="double-tile">برقی</div>
+            <div class="fourply-tile">بدنه</div>
+            <div class="tile">تهویه</div>
+            <div class="tile">ایمنی</div>
+            <div class="double-tile">آپشن و تزئینی</div>
+            <div class="double-tile">مصرفی</div>
+            <div class="tile">انتقال سوخت</div>
+            <div class="tile">جعبه فرمان</div>
+          </div>
+        </div>
+        <div class="body-left">
+          <div class="logos-container">
+            <img id="ikco" src="./IKCo.png" style="max-height: 100%; aspect-ratio: 1" />
+            <img src="./Renault.png" style="max-height: 100%; aspect-ratio: 1" />
+            <img src="./Peugeot.png" style="max-height: 100%; aspect-ratio: 1" />
+          </div>
+          <div class="calling-us">
+            <h3>راههای تماس با ما:</h3>
+            <p>
+              <span>021 33971622</span>
+              <span>021 33952557</span>
+              <span>021 33111168</span>
+              <i class="bi bi-telephone"></i>
+            </p>
+            <p>
+              <span>+98 9191242492</span>
+              <i class="bi bi-whatsapp"></i>
+            </p>
+            <p>
+              <span>+98 9191242492</span>
+              <i class="bi bi-chat-left-dots"></i>
+            </p>
+            <p>
+              <span>@isacoFarsaei</span>
+              <i class="bi bi-instagram"></i>
+            </p>
+            <p>
+              <span>www.isacofarsaei.ir</span>
+              <i class="bi bi-browser-chrome"></i>
+            </p>
+            <p>
+              <span>تهران، خیابان امیرکبیر (چراغ برق)، نبش کوچه سراج الملک، پلاک 425</span>
+              <i class="bi bi-geo-alt"></i>
+            </p>
+
+            <img src="store.jpg"/>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="root" style="display: none"></div>
+    <!--
+
+      
+    
+    
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
