@@ -1,131 +1,194 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-	  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="stylesheet" href="styles.css">
-    <title>ISACO Farsaei</title>
+    <link rel="icon" href="%PUBLIC_URL%/logo.png" />
+    
+   
+    <style>
+      @font-face {
+        font-family: persianFontBold;
+        src: url("IRANSans3.ttf");
+        font-weight: bold;
+      }
+      @font-face {
+        font-family: persianFont;
+        src: url("IRANSans1.ttf");
+      }
+      body {
+        margin: 0;
+        font-family: "persianFont";
+      }
+      .header {
+        direction: rtl;
+        background-color: blue;
+        color: white;
+        width: 100%;
+        height: 16.5vh;
+        display: flex;
+        box-sizing: border-box;
+        padding: 0;
+        justify-content: space-between;
+        font-size: 1.5em;
+        white-space: nowrap;
+      }
+      .col-flex {
+        display: flex;
+        flex-direction: column;
+      }
+      .header-side {
+        width: 30vw;
+        padding-bottom: 5%;
+        gap: 15px;
+        justify-content: flex-end;
+      }
+      .header-side h1 {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+      }
+      .line {
+        width: 100%;
+        height: 20px;
+        background-color: white;
+      }
+      .logo {
+        height: 80%;
+        aspect-ratio: 1;
+        padding-top: 12%;
+      }
+
+      .body-container {
+        background-image: url("./bg.png");
+        width: 100%;
+        height: 83.5vh;
+        box-sizing: border-box;
+        padding: 2vh 3vw;
+        gap: 2vh;
+        overflow-y: auto;
+      }
+      .card {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        font-size: 3em;
+        gap: 5vw;
+        border: 3px solid black;
+        border-radius: 14pt;
+        box-sizing: border-box;
+        padding: 1vh 1vw;
+        height: 7vh;
+        background-color: #ededed;
+        color: black;
+        cursor: pointer;
+      }
+      .card img {
+        height: 6.5vh;
+      }
+      a {
+        text-decoration: none;
+      }
+      .open-card {
+        height: auto !important;
+      }
+
+      @media only screen and (min-width: 900px) {
+        .header-side {
+          padding-bottom: 15px;
+        }
+        .line {
+          height: 7%;
+        }
+      }
+    </style>
   </head>
   <body>
-  <div class="App">
-	<div onclick="clearContacBox()">
-		<div class="banner">
-          <div class="banner-right">
-            <div class="banner-text">اصغر فرسایی</div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
-          <div class="banner-center">
-            <img src="IKCo.png" alt="logo" class="banner-logo"></img>
-            <h1>
-              <span class="font-face-header1">ایسا</span>
-              <span class="font-face-header5">کو </span>
-              <span class="font-face-header3"> فر</span>
-              <span class="font-face-header5">سا</span>
-              <span class="font-face-header4">یی</span>
-            </h1>
-          </div>
-          <div class="banner-left">
-            <div class="banner-text">کد: 4102122</div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
+    <div class="col-flex" style="height: 100vh; overflow-y: hidden">
+      <div class="header">
+        <div class="col-flex header-side">
+          <h1>ایساکو فرسایی</h1>
+          <div class="line"></div>
+          <div class="line"></div>
         </div>
-        <div class="about">
-          فروشگاه فرسایی با بیش از بیست سال سابقه (از سال 1381) در توزیع و فروش
-          قطعات یدکی و آپشن های جانبی خودرو با نمایندگی رسمی شرکت هایی چون
-          پلاتین ایران، سامفر، ویرا ولتاژ، و سمین خودرو پویا (SKP)، پس از چندین
-          سال ارائه خدمات حضوری در بازار لوازم یدکی خودرو و اخذ عاملیت فروشگاهی
-          مجاز ایساکو با کد 4102122، امکان خرید آنلاین لوازم یدکی خودرو را در
-          راستاي چشم انداز دسترسی آسان و اطمینان از اصالت کالا با بهترین قیمت را
-          برای کاربران خود فراهم ساخته است. همچنین شما میتوانید با همکاران ما در
-          شبکه های اجتماعی در ارتباط باشید و از مشاوره های تخصصی آنها پیش از
-          خرید استفاده کنید تا خرید مطمئن تر و رضایت بخش تری را تجربه نمایید.
+        <div>
+          <img class="logo" src="./IKCO.png" />
         </div>
-
-        <div class="logo-container">
-          <img src="./Peugeot.png" alt="logo" class="logo" />
-          <img src="./Renault.png" alt="logo" class="logo" />
-          <img src="./IKCo.png" alt="logo" class="logo" />
+        <div class="col-flex header-side">
+          <h1>کد: 4102122</h1>
+          <div class="line"></div>
+          <div class="line"></div>
         </div>
       </div>
-	  
-	  <div class="body">
-        <div class="body-header" onclick="setContactText('')">
-          <div class="font-face-header4">قطعات اصلی، امنیت بیشتر</div>
-          <div style="text-align: left" class="font-face-header4">
-            فروشگاه مجاز ایساکو در خدمت شما
+
+      <div class="col-flex body-container">
+        <a href="https://www.isacofarsaei.ir">
+          <div class="card">
+            <img src="./siteIcon.png" />
+            <span>www.isacofarsaei.ir</span>
           </div>
+        </a>
+        <a
+          href="whatsapp:contact=015555555555@s.whatsapp.com&message='وقت بخیر'"
+        >
+          <div class="card">
+            <img src="./textIcon.png" />
+            <span>+989191242492</span>
+          </div>
+        </a>
+        <a href="http://instagram.com/_u/isacoFarsaei/">
+          <div class="card">
+            <img src="./instaIcon.png" />
+            <span>@isacoFarsaei</span>
+          </div>
+        </a>
+        <div class="card">
+          <img src="./locationIcon.png" />
+          <span style="direction: rtl"
+            >تهران، خیابان امیرکبیر (چراغ برق)، نبش کوچه سراج الملک،، پلاک
+            425</span
+          >
         </div>
-		
-		<div class="category-container" onclick="setContactText('')">
-          <div class="engine card-container">
-            <div class="img-card">
-              <img src="/engine.png" />
-            </div>
-            <p>موتوری</p>
+        <a href="tel:02133971622">
+          <div class="card">
+            <img src="./callIcon.png" />
+            <span>02133971622</span>
           </div>
-          <div class="engine card-container">
-            <div class="img-card">
-              <img src="/electricCard.png" />
-            </div>
-            <p>برقی</p>
+        </a>
+        <a href="tel:02133112699">
+          <div class="card">
+            <img src="./callIcon.png" />
+            <span>02133112699</span>
           </div>
-          <div class="body-card card-container">
-            <div class="img-body-card">
-              <img src="/light.png" />
-            </div>
-            <p style="font-size: xx-large">بدنه</p>
-            <div class="img-body-card">
-              <img src="/doors.png" />
-            </div>
+        </a>
+        <a href="tel:02133952557">
+          <div class="card">
+            <img src="./callIcon.png" />
+            <span>02133952557</span>
           </div>
-          <div class="fs card-container">
-            <div class="img-card">
-              <img src="/fs.png" />
-            </div>
-            <p>جلوبندی</p>
-          </div>
-          <div class="tuning card-container">
-            <div class="img-card">
-              <img src="/tuning.png" />
-            </div>
-            <p>آپشن و تزئینات</p>
-          </div>
+        </a>
+        <div class="card" id="about" onclick="aboutCard()">
+          <img src="./aboutIcon.png" />
+          <span id="aboutUs">درباره ما</span>
         </div>
-		
-		
-		<div class="contact-container">
-          <div class="contact-text" style='border: 2px solid black; border-radius: 7pt; height: 70px;'>
-            {contactText}
-          </div>
-          <div class="contact-list">
-            <div onhover='setContactText("021-33971622" + " , " + "021-33952557")' onclick='openLink("tel:+982133971622")'> tel </div>
-            <div onhover='setContactText("http://www.isacofarsaei.ir")' onclick='openLink("http://www.isacofarsaei.ir")'> Website </div>
-            <div onhover='setContactText("989191242492+")'> WhatsUp </div>
-            <div onhover='setContactText("isaco_farsari@")'> Instagram </div>
-            <div onhover='setContactText("تهران، خیابان امیرکبیر، نبش کوچه سراج الملک، پلاک 425")'> Location </div>
-          </div>
-        </div>
-		
-		
-	  </div>
-	  
-	</div>
-	
-	
-	<script>
-		function clearContacBox() {
-		
-		}
-		function clearContacBox(text) {
-		
-		}
-		function openLink(text) {
-		
-		}
-	</script>
+      </div>
+    </div>
+    <noscript><h1>You need to enable JavaScript to run this app.</h1></noscript>
+    <script>
+      let aboutCardIsOpen = false;
+      const aboutStore = "فروشگاه فرسایی با بیش از بیست سال سابقه (از سال 1381) در توزیع وفروش قطعات یدکی و آپشن های جانبی خودرو با نمایندگی رسمی شرکت هایی چون پلاتین ایران، سامفر، ویرا ولتاژ، و سمین خودرو پویا (SKP)، هم اکنون با اخذ عاملیت فروشگاهی مجاز ایساکو با کد 4102122 در خدمت شماست تا امکان خرید آنلاین لوازم یدکی خودرو را در راستاي چشم انداز دسترسی آسان و اطمینان از اصالت کالا با بهترین قیمت را برای کاربران خود فراهم سازد. شما می توانید با همکاران ما در شبکه های اجتماعی در ارتباط باشید و از مشاوره های تخصصی آنها پیش از خرید استفاده کنید تا خرید مطمئن تر و رضایت بخش تری را تجربه نمایید."
+      function aboutCard() {
+        aboutCardIsOpen = !aboutCardIsOpen;
+        if (aboutCardIsOpen) {
+          const el = document.querySelector('#about');
+          el.classList.add("open-card")
+
+          document.getElementById("about").innerHTML = "<div class='col-flex'><div style='display:flex; flex-direction: row-reverse; align-items: center; gap: 5vw'>"+document.getElementById("about").innerHTML+"</div><div style='text-align: justify; direction: rtl; padding: 20px;'>"+aboutStore+"</div></div>"
+        } else {
+          const el = document.querySelector('#about');
+          el.classList.remove("open-card");
+
+          document.getElementById("about").innerHTML = '<img src="./aboutIcon.png" /><span>درباره ما</span>'
+        }
+      }
+    </script>
   </body>
 </html>
